@@ -8,7 +8,7 @@
       #binding-cells = <2>;
       tapping-term-ms = <U_TAPPING_TERM>;
       flavor = "tap-preferred";
-      quick-tap-ms = <150>;
+      quick-tap-ms = <175>;
       bindings = <&kp>, <&kp>;
     };
     u_lt: u_lt {
@@ -16,7 +16,7 @@
       #binding-cells = <2>;
       tapping-term-ms = <U_TAPPING_TERM>;
       flavor = "tap-preferred";
-      quick-tap-ms = <150>;
+      quick-tap-ms = <175>;
       bindings = <&mo>, <&kp>;
     };
   };
