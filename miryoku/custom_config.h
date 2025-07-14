@@ -14,7 +14,7 @@
 U_NP,              U_NP,              &kp ESC,           &kp SPC,           &mo U_GAMENUM,     &kp RET,           &kp BSPC,          &kp DEL,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_GAMENUM \
-&kp TAB,           &kp NUM_1,         &kp NUM_2,         &kp none,          &kp NUM_3,         &kp LBKT,          &kp F7,            &kp F8,            &kp F9,            &kp RBKT,         \
+&kp TAB,           &kp NUM_1,         &kp NUM_2,         &none,          &kp NUM_3,         &kp LBKT,          &kp F7,            &kp F8,            &kp F9,            &kp RBKT,         \
 &kp LSHFT,         &kp M,             &kp I,             &kp H,             &kp G,             &kp EQL,           &kp F4,            &kp F5,            &kp F6,            &kp SEMI,         \
 &kp LCTRL,         &kp NUM_4,         &kp NUM_5,         &kp B,             &kp T,             &kp BSLH,          &kp F1,            &kp F2,            &kp F3,            &kp GRAVE,        \
 U_NP,              U_NP,              &to U_BASE,        &kp SPC,           &none,             &kp MINUS,         &kp NUM_0,         &kp DOT,           U_NP,              U_NP
