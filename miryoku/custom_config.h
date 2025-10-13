@@ -19,6 +19,12 @@ U_NP,              U_NP,              &kp ESC,           &kp SPC,           &mo 
 &kp LCTRL,         &kp NUM_4,         &kp NUM_5,         &kp B,             &kp T,             &kp BSLH,          &kp F1,            &kp F2,            &kp F3,            &kp GRAVE,        \
 U_NP,              U_NP,              &to U_BASE,        &kp SPC,           &none,             &kp MINUS,         &kp NUM_0,         &kp DOT,           U_NP,              U_NP
 
+#define MIRYOKU_ALTERNATIVES_MEDIA_VI \
+U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      &u_bt_clr_all,     U_RGB_EFF,         U_RGB_HUI,         U_RGB_SAI,         U_RGB_BRI,         U_RGB_TOG,         \
+&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &kp C_PREV,        &kp C_VOL_DN,      &kp C_VOL_UP,      &kp C_NEXT,        U_EP_TOG,          \
+U_NA,              &kp RALT,          &u_to_U_FUN,       &u_to_U_MEDIA,     &u_bt_clr,         &u_bt_sel_0,       &u_bt_sel_1,       &u_bt_sel_2,       &u_bt_sel_3,       &u_out_tog,        \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp C_STOP,        &kp C_PP,          &kp C_MUTE,        U_NP,              U_NP
+
 #define MIRYOKU_LAYERMAPPING_NUM( \
      K00, K01, K02, K03, K04,      K05, K06, K07, K08, K09, \
      K10, K11, K12, K13, K14,      K15, K16, K17, K18, K19, \
