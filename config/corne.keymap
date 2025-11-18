@@ -1,12 +1,13 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
-// Includes the custom config definitions (like &studio_unlock)
+// 1. Miryoku Includes must be at the top
 #include "../miryoku/custom_config.h" 
-// Includes your keyboard’s mapping
 #include "../miryoku/mapping/42/corne.h"
 
+// 2. Main Devicetree Node (The / is required)
 / {
+    // A. ZMK Studio RPC Overlays
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
     };
@@ -17,8 +18,11 @@
         label = "STUDIO_RPC_USB";
     };
 
+    // B. Keymap Node
     keymap {
         compatible = "zmk,keymap";
+
+        // Includes the core Miryoku layers (dtsi should be inside the keymap node)
         #include "../miryoku/miryoku.dtsi"
 
         // Layers added for ZMK Studio
