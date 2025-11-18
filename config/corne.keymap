@@ -5,9 +5,8 @@
 #include "../miryoku/custom_config.h" 
 #include "../miryoku/mapping/42/corne.h"
 
-// 2. Main Devicetree Node (The / is required)
 / {
-    // A. ZMK Studio RPC Overlays
+    // 2. ZMK Studio RPC Overlays (Nodes)
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
     };
@@ -18,15 +17,15 @@
         label = "STUDIO_RPC_USB";
     };
 
-    // B. Keymap Node
+    // 3. Keymap Node Definition
     keymap {
         compatible = "zmk,keymap";
 
-        // Includes the core Miryoku layers (dtsi should be inside the keymap node)
+        // This must be inside the keymap node
         #include "../miryoku/miryoku.dtsi"
 
-        // Layers added for ZMK Studio
-        extra1 { status = "reserved"; };
-        extra2 { status = "reserved"; };
+        // 4. Custom/Reserved Layers (must be outside of the #include)
+        extra1: extra1 { status = "reserved"; };
+        extra2: extra2 { status = "reserved"; };
     };
 };
