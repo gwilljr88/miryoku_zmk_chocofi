@@ -1,31 +1,28 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
-// 1. Miryoku Includes must be at the top
-#include "../miryoku/custom_config.h" 
+#include "../miryoku/custom_config.h"
 #include "../miryoku/mapping/42/corne.h"
+#include "../miryoku/miryoku.dtsi"
 
 / {
-    // 2. ZMK Studio RPC Overlays (Nodes)
+    // 1. Add the Studio RPC configuration
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
     };
-    
+
     studio_rpc_usb: studio_rpc_usb {
         compatible = "zmk,studio-rpc-uart";
         status = "okay";
         label = "STUDIO_RPC_USB";
     };
 
-    // 3. Keymap Node Definition
+    // 2. Merge reserved layers into the keymap
+    // The compiler will combine this with the keymap defined in miryoku.dtsi
     keymap {
-        compatible = "zmk,keymap";
-
-        // This must be inside the keymap node
-        #include "../miryoku/miryoku.dtsi"
-
-        // 4. Custom/Reserved Layers (Explicitly labeled for robustness)
-        extra1: extra1 { status = "reserved"; };
-        extra2: extra2 { status = "reserved"; };
+        extra1 { status = "reserved"; };
+        extra2 { status = "reserved"; };
+        extra3 { status = "reserved"; };
+        extra4 { status = "reserved"; };
     };
 };
