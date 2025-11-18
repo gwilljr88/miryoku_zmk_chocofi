@@ -6,20 +6,10 @@
 #include "../miryoku/miryoku.dtsi"
 
 / {
-    // 1. Add the Studio RPC configuration
-    chosen {
-        zmk,studio-rpc-endpoint = &studio_rpc_usb;
-    };
-
-    studio_rpc_usb: studio_rpc_usb {
-        compatible = "zmk,studio-rpc-uart";
-        status = "okay";
-        label = "STUDIO_RPC_USB";
-    };
-
-    // 2. Merge reserved layers into the keymap
-    // The compiler will combine this with the keymap defined in miryoku.dtsi
     keymap {
+        compatible = "zmk,keymap";
+        
+        // ZMK Studio Reserved Layers
         extra1 { status = "reserved"; };
         extra2 { status = "reserved"; };
         extra3 { status = "reserved"; };
