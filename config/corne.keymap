@@ -24,7 +24,7 @@
         // This must be inside the keymap node
         #include "../miryoku/miryoku.dtsi"
 
-        // 4. Custom/Reserved Layers (must be outside of the #include)
+        // 4. Custom/Reserved Layers (Explicitly labeled for robustness)
         extra1: extra1 { status = "reserved"; };
         extra2: extra2 { status = "reserved"; };
     };
