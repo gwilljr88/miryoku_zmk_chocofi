@@ -7,7 +7,6 @@
 #include "../miryoku/mapping/42/corne.h"
 
 / {
-    // --- START: ZMK Studio Devicetree Fix ---
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
     };
@@ -17,11 +16,9 @@
         status = "okay";
         label = "STUDIO_RPC_USB";
     };
-    // --- END: ZMK Studio Devicetree Fix ---
 
     keymap {
         compatible = "zmk,keymap";
-        // Includes the core Miryoku layers
         #include "../miryoku/miryoku.dtsi"
 
         // Layers added for ZMK Studio
