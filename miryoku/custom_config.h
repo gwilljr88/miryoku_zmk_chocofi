@@ -3,6 +3,7 @@
 
 //#define MIRYOKU_KLUDGE_DOUBLETAPBOOT
 #define MIRYOKU_KLUDGE_SOFT_OFF
+#define MIRYOKU_TAP_BASE_R4 &studio_unlock
 
 #define XXX &none
 
