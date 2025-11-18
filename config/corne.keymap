@@ -1,19 +1,31 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
+// Includes the custom config definitions (like &studio_unlock)
+#include "../miryoku/custom_config.h" 
+// Includes your keyboard’s mapping
+#include "../miryoku/mapping/42/corne.h"
+
 / {
+    // --- START: ZMK Studio Devicetree Fix ---
+    chosen {
+        zmk,studio-rpc-endpoint = &studio_rpc_usb;
+    };
+    
+    studio_rpc_usb: studio_rpc_usb {
+        compatible = "zmk,studio-rpc-uart";
+        status = "okay";
+        label = "STUDIO_RPC_USB";
+    };
+    // --- END: ZMK Studio Devicetree Fix ---
+
     keymap {
         compatible = "zmk,keymap";
-        #include "../miryoku/custom_config.h"
-        #include "../miryoku/mapping/42/corne.h"
+        // Includes the core Miryoku layers
         #include "../miryoku/miryoku.dtsi"
 
-        // --- Layers Reserved for ZMK Studio Modifications ---
-        extra1 {
-            status = "reserved";
-        };
-        extra2 {
-            status = "reserved";
-        };
+        // Layers added for ZMK Studio
+        extra1 { status = "reserved"; };
+        extra2 { status = "reserved"; };
     };
 };
