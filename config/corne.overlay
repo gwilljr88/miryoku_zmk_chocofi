@@ -1,17 +1,18 @@
-/* Manually bridge the SPI label for the nice!view shield */
+/* * 1. Enable the SPI hardware on the board 
+ */
 &spi0 {
     status = "okay";
 };
 
+/* * 2. Create an alias/label in the root for the shield to find 
+ */
 / {
-    /* Define the label that the nice_view.overlay specifically looks for */
-    nice_view_spi: &spi0 {};
+    nice_view_spi: &spi0 { };
 
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
     };
 
-    /* Create the RPC node using the correct USB UART compatible */
     studio_rpc_usb: studio_rpc_usb {
         compatible = "zmk,studio-rpc-usb-uart";
         label = "STUDIO_RPC_USB";
