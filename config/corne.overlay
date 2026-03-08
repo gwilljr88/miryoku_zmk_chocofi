@@ -1,16 +1,19 @@
-/* Enable USB and UART for ZMK Studio RPC */
+/* Manually bridge the SPI label for the nice!view shield */
+&spi0 {
+    status = "okay";
+};
+
 / {
-    nice_view_spi: &spi0 {
-        status = "okay";
-    };
-    
+    /* Define the label that the nice_view.overlay specifically looks for */
+    nice_view_spi: &spi0 {};
+
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
     };
 
+    /* Create the RPC node using the correct USB UART compatible */
     studio_rpc_usb: studio_rpc_usb {
-        compatible = "zmk,studio-rpc-uart";
-        status = "okay";
+        compatible = "zmk,studio-rpc-usb-uart";
         label = "STUDIO_RPC_USB";
     };
 };
