@@ -1,5 +1,9 @@
 /* Enable USB and UART for ZMK Studio RPC */
 / {
+    nice_view_spi: &spi0 {
+        status = "okay";
+    };
+    
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
     };
