@@ -1,12 +1,15 @@
-/* Enable the hardware SPI bus on the nice!nano */
+/* * Force-enable the SPI bus and provide the labels needed 
+ * by the nice!view shield and adapter.
+ */
+
 &spi0 {
     status = "okay";
 };
 
-/* Create the alias/label globally */
 / {
-    /* This creates the label 'nice_view_spi' pointing to '&spi0' */
-    nice_view_spi: &spi0 { };
+    /* Manually bridge the labels to the hardware SPI0 bus */
+    nice_view_spi: &spi0 {};
+    pro_micro_spi: &spi0 {};
 
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
