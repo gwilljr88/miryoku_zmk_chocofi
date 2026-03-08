@@ -1,13 +1,16 @@
-/* * 1. Enable the SPI hardware on the board 
+/* * 1. Ensure the SPI hardware is enabled on the nice!nano 
  */
 &spi0 {
     status = "okay";
 };
 
-/* * 2. Create an alias/label in the root for the shield to find 
+/* * 2. Manually define the label that 'nice_view' is failing to find.
+ * We place it in the root as a handle for the compiler.
  */
 / {
-    nice_view_spi: &spi0 { };
+    nice_view_spi: &spi0 {
+        status = "okay";
+    };
 
     chosen {
         zmk,studio-rpc-endpoint = &studio_rpc_usb;
