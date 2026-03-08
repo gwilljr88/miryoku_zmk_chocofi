@@ -1,13 +1,10 @@
-/* * Force-enable the SPI bus and provide the labels needed 
- * by the nice!view shield and adapter.
- */
-
+/* Enable the SPI hardware bus */
 &spi0 {
     status = "okay";
 };
 
 / {
-    /* Manually bridge the labels to the hardware SPI0 bus */
+    /* Manually define the labels the adapter and shield are looking for */
     nice_view_spi: &spi0 {};
     pro_micro_spi: &spi0 {};
 
