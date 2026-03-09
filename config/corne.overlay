@@ -1,0 +1,12 @@
+/* 1 . Setup USB CDC ACM for ZMK Studio (Standard Method) */
+&zephyr_udc0 {
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
+
+/ {
+    chosen {
+        zmk,studio-rpc-endpoint = &cdc_acm_uart;
+    };
+};
