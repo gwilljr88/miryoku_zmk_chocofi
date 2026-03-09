@@ -1,0 +1,19 @@
+/* Enable the SPI hardware bus */
+&spi0 {
+    status = "okay";
+};
+
+/ {
+    /* Define the labels BEFORE the shields ask for them */
+    nice_view_spi: &spi0 {};
+    pro_micro_spi: &spi0 {};
+
+    chosen {
+        zmk,studio-rpc-endpoint = &studio_rpc_usb;
+    };
+
+    studio_rpc_usb: studio_rpc_usb {
+        compatible = "zmk,studio-rpc-usb-uart";
+        label = "STUDIO_RPC_USB";
+    };
+};
